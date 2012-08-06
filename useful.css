@@ -1,0 +1,56 @@
+/*  
+
+Author: 1UPDesign
+Author URI: http://1updesign.org/
+Version: 1.0
+*/
+
+.container
+{
+	width:1020px;
+	margin:auto;
+	position:relative;
+}
+
+.left
+{
+	float:left;
+}
+
+.right
+{
+	float:right;
+}
+
+#clearboth, .clearboth
+{
+	clear:both;
+}
+
+.column_five
+{
+	width:19.2%;
+	float:left;
+	margin-right:1%;
+	margin-bottom:1em;
+}
+
+.column_three
+{
+	width:32.5%;
+	float:left;
+	margin-right:1%;
+	margin-bottom:1em;
+}
+
+.column_two
+{
+	width:49%;
+	float:left;
+	margin-right:1em;	
+}
+
+.column_right
+{
+	margin-right:0;
+}
