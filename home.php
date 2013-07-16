@@ -23,8 +23,8 @@ Page: home.php
 	<div class="section" id="three_column_home">
 		<div class="three_column_box" id="caption">
 			<div class="contents" id="twitter_feed">
-				<?php 
-get_twitter_feed("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=cultureShockMo", 1); ?>
+				<?php   
+// get_twitter_feed("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=cultureShockMo", 1); ?>
 				<div class="caption">
 					<img src="<?php bloginfo('stylesheet_directory') ?>/assets/images/twitter_logo.png" class="left">
 					<a href="https://twitter.com/#!/cultureShockMo"><span 
