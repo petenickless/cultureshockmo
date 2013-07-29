@@ -20,43 +20,22 @@ Page: home.php
 	the_content();
 	?>
 </div> <!--#home_text-->
-	<div class="section" id="three_column_home">
-		<div class="three_column_box" id="caption">
-			<div class="contents" id="twitter_feed">
-				<?php   
-// get_twitter_feed("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=cultureShockMo", 1); ?>
-				<div class="caption">
-					<img src="<?php bloginfo('stylesheet_directory') ?>/assets/images/twitter_logo.png" class="left">
-					<a href="https://twitter.com/#!/cultureShockMo"><span 
-class="title">Latest from Twitter</span></a>
+	<div class="slider-wrap">
+		<div id="slider-caption"></div>
+		<div class="section" id="slider">
+			<?php $args = array( 'post_type' => 'home-slider',);
+			$loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'home-slider'); ?>
+				<div class="slider-frame" style="background-image:url('<?php echo $img[0] ?>');" title="<?php the_title() ?>">
+				
 				</div>
-			</div>
-		</div>
-		<?php 
-		$args = array( 'posts_per_page' => 1,);
-		$loop = new WP_Query( $args );
-		while ( $loop->have_posts() ) : $loop->the_post(); ?>
-		<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'home-blog-teaser'); ?>
-		<?php $alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true); ?>
-		<div rel="<?php echo $alt; ?>" id="home_blog_teaser_img" style="background-image:url('<?php echo $img[0]; ?>');"></div>
-		<div class="three_column_box" id="caption_mask">
-			<div class="caption">
-				<a href="<?php the_permalink(); ?>">
-					<div class="title"><span>Latest: </span><?php the_title(); ?></div>
-				</a>
-			</div>
-		<?php endwhile; ?>
-		</div>
-		<div class="three_column_box" id="filled">
-			<div class="contents">
-				<h1>Live performance</h1>
-				<h2>Sat 9th of June @ 8pm</h2>
-				<h3>St Anne’s Church, Moseley</h3>
-				<h3>Free Entry, Free Food!</h3>
-			</div>
-		</div>
-		<div class="page_break"></div>
+			<?php endwhile; ?>
+		</div>	
 	</div>
+			<div class="page_break"></div>
+	<div class="clearboth"></div>
+
 	<div class="section" id='about'>
 		<?php
 		//Get home page
@@ -64,7 +43,7 @@ class="title">Latest from Twitter</span></a>
 		$page = get_page_by_title('about culture shock'); 
 		setup_postdata($page); ?>
 		<h1>About Culture Shock</h1>
-		<h1 id="event_date">4-9th June 2012</h1>
+		<h1 id="event_date">23rd-27th Sept 2013</h1>
 		<div class="clearboth"></div>
 		<?php the_content(); ?>
 		<div class="page_break"></div>
@@ -80,6 +59,16 @@ class="title">Latest from Twitter</span></a>
 		<div class="clearboth"></div>
 		<div class="page_break"></div>
 	</div> <!--#about-->
+	<div class="section" id='cs2012'>
+		<?php
+		//Get home page
+		wp_reset_query();
+		$page = get_page_by_title('culture shock 2012'); 
+		setup_postdata($page); ?>
+		<h1>Culture Shock 2012</h1>
+		<?php the_content(); ?>
+		<div class="page_break"></div>
+	</div> <!--#cs2012-->
 	<div class="section" id='contact'>
 		<?php
 		//Get home page

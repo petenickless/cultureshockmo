@@ -272,3 +272,38 @@ label.error {
 	position:absolute;
 	z-index:10;
 }
+
+/* 2013 Adds */
+
+.slider-frame {
+	width:807px;
+	height:350px;
+	background-position: center center;
+}
+
+#slider {
+	height:350px;
+}
+
+#slider-caption {
+	background-color: black;
+	position: absolute;
+	z-index: 100;
+	padding: 1em;
+	text-shadow:none;
+	max-width: 10em;
+}
+
+.right-caption {
+	margin-top: 16em;
+	right: 0;
+}
+
+.left-caption {
+	margin-top:4em;
+	left:0;
+}
+
+#slider-wrap {
+	position: relative;
+}

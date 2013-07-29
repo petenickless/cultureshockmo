@@ -40,11 +40,24 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory') ?>/assets/js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?php bloginfo('stylesheet_directory') ?>/assets/js/jquery.jscroll.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="<?php bloginfo('stylesheet_directory') ?>/assets/js/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>	
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
 			$("#contact_form").validate();
 			$("#nav").jScroll({top : 100, speed: 'slow'});
-		})
+			$("#slider").cycle({
+			       //  before: function() {  
+			       //      $('#slider-caption').html(this.title); 
+			       //      if($("#slider-caption").attr('class') == "left-caption"){
+			   				// $('#slider-caption').removeClass("left-caption");
+			       //      	$('#slider-caption').addClass("right-caption");
+			       //      }else{
+			       //      	$('#slider-caption').removeClass("right-caption");
+			       //      	$('#slider-caption').addClass("left-caption");
+			       //      }  
+			       //  }
+			});
+		});
 	</script>
 	<?php wp_head(); ?>
 </head>

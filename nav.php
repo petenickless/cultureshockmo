@@ -30,6 +30,10 @@ if($path == "/"){
 		"url" => "/#venue",
 		);
 	$nav_items[] = array(
+		"title" => "Culture Shock 2012",
+		"url" => "/#cs2012"
+		);
+	$nav_items[] = array(
 		"title" => "Contact",
 		"url" => "/#contact",
 		);
